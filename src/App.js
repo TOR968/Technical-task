@@ -1,22 +1,26 @@
-import logo from './logo.svg';
+import earth from './img/earth.png';
+import astronaut from './img/astronaut.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <h1 className="Head-name"> TMG </h1>
+        <div className="Astronaut-block">
+          <img src={astronaut} className="Astronaut" alt="Astronaut" />
+        </div>
+
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
+        </p> */}
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        ></a> */}
+        <img src={earth} className="Earth" alt="Earth" />
       </header>
     </div>
   );
