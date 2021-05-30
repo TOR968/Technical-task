@@ -2,6 +2,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  font-family: 'Oswald', sans-serif;
 }
 
 .App-header {
@@ -18,11 +19,38 @@
   color: white;
 }
 
+.off {
+  opacity: 0;
+}
+
+.Button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  background-color: black;
+  color: yellow;
+  border: none;
+  height: 60px;
+  width: 200px;
+  font-size: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .Head-name {
-  font-size: 320px;
+  font-size: 40vh;
   animation: Head-name-muvement 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.Earth-off {
+  position: absolute;
+  bottom: -75%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 50%;
+}
 .Earth {
   position: absolute;
   bottom: -75%;
@@ -33,15 +61,15 @@
 }
 
 .Astronaut-block {
-  height: 320px;
   z-index: 3;
   position: absolute;
   left: 60vw;
-  animation: Astronaut-muvement infinite 4s linear;
+  animation: Astronaut-muvementY infinite 4s linear,
+    Astronaut-muvementX 1 2500ms linear;
 }
 
 .Astronaut {
-  height: 320px;
+  height: 30vh;
   animation: Astronaut-scale 1 3s linear;
 }
 
@@ -65,7 +93,7 @@
 
 @keyframes Astronaut-scale {
   0% {
-    transform: scale(0) translateX(-100%);
+    transform: scale(0);
   }
   10% {
     transform: scale(0.05);
@@ -95,16 +123,25 @@
     transform: scale(0.8);
   }
   100% {
-    transform: scale(1) translateX(0);
+    transform: scale(1);
   }
 }
 
-@keyframes Astronaut-muvement {
+@keyframes Astronaut-muvementY {
   0% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes Astronaut-muvementX {
+  0% {
+    transform: translateX(-100%);
   }
   100% {
     transform: translateY(0);
